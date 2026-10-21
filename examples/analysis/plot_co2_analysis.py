@@ -6,7 +6,7 @@ A minimal concentration analysis: subclass :class:`~darsia.TracerAnalysis`,
 describe how a signal becomes a concentration, and apply it to a test image
 relative to a baseline.
 """
-
+# %%
 import os
 from pathlib import Path
 
@@ -49,3 +49,4 @@ co2_analysis = TailoredTracerAnalysis(baseline, config, True)
 
 test_image = os.path.join(image_folder, "co2_2.jpg")
 test_co2 = co2_analysis.single_image_analysis(Path(test_image))
+

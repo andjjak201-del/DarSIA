@@ -6,7 +6,7 @@ The five-minute tour: read a photograph as a physical :class:`~darsia.Image`,
 inspect it, overlay a metric grid, and cut out a region of interest -- either in
 physical coordinates (metres) or by raw pixel index.
 """
-
+# %%
 import os
 
 import darsia
@@ -45,3 +45,13 @@ pixel_roi.show("region of interest (pixels)")
 
 print("metadata:", image.metadata())
 print("array shape:", image.img.shape)
+
+# %%
+print(image.metadata())          # bredde, høyde, osv.
+print(image.img.shape)           # antall piksler (rader, kolonner, farger)
+
+image.add_grid(dx=0.03, dy=0.03).show("5 cm rutenett")
+
+roi = darsia.make_coordinate([[0.5, 0.2], [1.2, 0.8]])   # ditt eget område, i meter
+image.subregion(roi).show("mitt område")
+# %%
